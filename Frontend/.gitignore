@@ -11,12 +11,12 @@ lerna-debug.log*
 node_modules
 
 # Local env files
-.env
-.env.local
-backend/.env
-frontend/.env
-frontend/.env.local
-backend/.env.local
+# .env
+# .env.local
+# backend/.env
+# frontend/.env
+# frontend/.env.local
+# backend/.env.local
 
 # Local config
 *.local
