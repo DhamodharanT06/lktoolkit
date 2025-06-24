@@ -1,0 +1,792 @@
+.pricing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: #333;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pricing-header h1 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.pricing-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* Billing toggle styles */
+.billing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  gap: 0.75rem;
+}
+
+.billing-toggle span {
+  font-size: 1rem;
+  color: #64748b;
+  position: relative;
+}
+
+.billing-toggle span.active {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e5e7eb;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #3b82f6;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+.save-badge {
+  position: absolute;
+  top: -12px;
+  right: -28px;
+  background-color: #10b981;
+  color: white;
+  font-size: 0.625rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 100px;
+  font-weight: bold;
+}
+
+/* Plans container */
+.pricing-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Individual plan styling */
+.pricing-plan {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.03);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.pricing-plan:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-plan.popular {
+  border: 2px solid #3b82f6;
+  transform: scale(1.05);
+}
+
+.pricing-plan.popular:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.pricing-plan.special {
+  border: 2px solid #9c27b0;
+  transform: scale(1.03);
+  position: relative;
+  z-index: 2; /* Ensure it appears above other cards */
+  box-shadow: 0 8px 24px rgba(156, 39, 176, 0.25);
+  background: linear-gradient(to bottom, #ffffff, #f9f4fb);
+  transition: all 0.4s ease;
+}
+
+.pricing-plan.special:hover {
+  transform: scale(1.05) translateY(-8px);
+  box-shadow: 0 12px 30px rgba(156, 39, 176, 0.35);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3b82f6;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+}
+
+.special-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #9c27b0, #673ab7);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  box-shadow: 0 4px 8px rgba(156, 39, 176, 0.3);
+  z-index: 3;
+}
+
+/* Special glow effect */
+.pricing-plan.special::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle at center, rgba(156, 39, 176, 0.2) 0%, rgba(156, 39, 176, 0) 70%);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.7;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.98); opacity: 0.5; }
+  50% { transform: scale(1.02); opacity: 0.8; }
+  100% { transform: scale(0.98); opacity: 0.5; }
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.plan-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.plan-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plan-price .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.plan-price .period {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.billed-annually {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.plan-features {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.plan-features ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.938rem;
+}
+
+.plan-features li:last-child {
+  border-bottom: none;
+}
+
+.plan-features li::before {
+  content: "✓";
+  color: #10b981;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.plan-cta {
+  text-align: center;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.cta-button.free {
+  background-color: #38b2ac;  /* Teal color */
+  color: white;
+  border: 1px solid #2c9a94;
+}
+
+.cta-button.free:hover {
+  background-color: #319795;
+}
+
+.cta-button.basic {
+  background-color: #805ad5;  /* Purple color */
+  color: white;
+}
+
+.cta-button.basic:hover {
+  background-color: #6b46c1;
+}
+
+.cta-button.pro {
+  background-color: #dd6b20;  /* Orange color */
+  color: white;
+}
+
+.cta-button.pro:hover {
+  background-color: #c05621;
+}
+
+.cta-button.elite {
+  background: linear-gradient(135deg, #9c27b0, #673ab7);
+  color: white;
+  border: none;
+  font-weight: 600;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button.elite:hover {
+  box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Features table */
+.pricing-features {
+  margin-bottom: 4rem;
+}
+
+.pricing-features h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  color: #2c3e50;
+}
+
+.features-table-container {
+  overflow-x: auto;
+}
+
+.features-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.features-table th,
+.features-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.features-table th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.features-table th:first-child,
+.features-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.features-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* FAQ section */
+.pricing-faq {
+  margin-bottom: 4rem;
+}
+
+.pricing-faq h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  color: #2c3e50;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-list-numbered {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.faq-list-numbered li {
+  margin-bottom: 0.75rem;
+}
+
+.faq-list-numbered li strong {
+  color: #2c5282;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.25rem;
+  text-align: left;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  background-color: #f8fafc;
+}
+
+.faq-question.active {
+  background-color: #f8fafc;
+}
+
+.faq-icon {
+  font-size: 1.25rem;
+  color: #3b82f6;
+}
+
+.faq-answer {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  background-color: #f8fafc;
+}
+
+.faq-answer p {
+  margin: 0;
+  font-size: 0.938rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Bottom CTA section */
+.pricing-cta-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #f1f5f9;
+  border-radius: 0.75rem;
+}
+
+.pricing-cta-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.pricing-cta-section p {
+  margin-bottom: 2rem;
+  color: #64748b;
+}
+
+.main-cta-button {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background-color: #3b82f6;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease;
+}
+
+.main-cta-button:hover {
+  background-color: #2563eb;
+}
+
+/* Feature comparison section */
+.features-comparison {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.features-comparison h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #2d3748;
+}
+
+.comparison-table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+}
+
+.comparison-header {
+  display: flex;
+  background-color: #2c3e50;
+  color: white;
+  font-weight: 600;
+}
+
+.comparison-header .feature-column {
+  background-color: #1e2a37;
+}
+
+.feature-column {
+  flex: 2;
+  padding: 1rem;
+  text-align: left;
+  border-right: 1px solid #e2e8f0;
+}
+
+.plan-column {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plan-column.free {
+  background-color: #f8fafc;
+}
+
+.plan-column.basic {
+  background-color: #ebf8ff;
+}
+
+.plan-column.premium {
+  background-color: #e6fffa;
+}
+
+.plan-column.elite {
+  background-color: #f3e5f5;
+  font-weight: 500;
+  border-bottom: 2px solid #9c27b0;
+}
+
+.comparison-header .plan-column.elite {
+  background: linear-gradient(135deg, #9c27b0, #673ab7);
+  color: white;
+  font-weight: bold;
+}
+
+.comparison-row {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.comparison-row:last-child {
+  border-bottom: none;
+}
+
+.comparison-category {
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.comparison-category:last-child {
+  border-bottom: none;
+}
+
+.category-header {
+  background-color: #f1f5f9;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  text-align: left;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+  grid-column: 1 / -1;
+}
+
+/* Override plan column styles in header */
+.comparison-header .plan-column.free {
+  background-color: #64748b;
+}
+
+.comparison-header .plan-column.basic {
+  background-color: #3b82f6;
+}
+
+.comparison-header .plan-column.premium {
+  background-color: #2c3e50;
+}
+
+/* Responsive styles for feature comparison */
+@media (max-width: 768px) {
+  .comparison-table {
+    font-size: 0.9rem;
+  }
+  
+  .feature-column, .plan-column {
+    padding: 0.8rem 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .comparison-table {
+    font-size: 0.8rem;
+  }
+  
+  .feature-column {
+    flex: 1.2;
+  }
+  
+  .plan-column {
+    flex: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .pricing-header p {
+    font-size: 1rem;
+  }
+  
+  .pricing-plans {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .pricing-plan.popular {
+    transform: none;
+  }
+  
+  .pricing-plan.popular:hover {
+    transform: translateY(-5px);
+  }
+  
+  .features-table th,
+  .features-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .features-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-tier {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-container {
+    padding: 1rem;
+  }
+  
+  .plan-price .price {
+    font-size: 2rem;
+  }
+  
+  .pricing-cta-section {
+    padding: 2rem 1rem;
+  }
+  
+  .pricing-cta-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .faq-question {
+    padding: 1rem;
+    font-size: 0.938rem;
+  }
+}
+
+/* Coming Soon elements */
+.coming-soon-badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background-color: #f97316; /* Orange color */
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: rotate(15deg);
+}
+
+.pricing-plan.popular .coming-soon-badge {
+  top: 20px;  /* Adjust position to avoid overlap with "Most Popular" badge */
+}
+
+.coming-soon-note {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff9c2;
+  border-radius: 8px;
+  border-left: 4px solid #f59e0b;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.coming-soon-note p {
+  margin: 0;
+  color: #92400e;
+  font-weight: 500;
+}
+
+/* Style buttons for coming soon plans */
+.cta-button.coming-soon {
+  background-color: #718096;
+  border-color: #4a5568;
+  cursor: default;
+  opacity: 0.8;
+}
+
+.cta-button.coming-soon:hover {
+  background-color: #718096;
+  transform: none;
+  opacity: 0.9;
+}
+
+/* Coming Soon Toast */
+.coming-soon-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4a5568;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: fadeInOut 3s ease-in-out;
+  font-weight: 500;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, 20px); }
+  15% { opacity: 1; transform: translate(-50%, 0); }
+  85% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+/* Style button versions of CTA buttons to look like links */
+button.cta-button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.plan-shield {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.free-shield {
+  background: linear-gradient(135deg, #64748b 0%, #a0aec0 100%);
+  color: #fff;
+}
+
+.basic-shield {
+  background: linear-gradient(135deg, #805ad5 0%, #a084e8 100%);
+  color: #fff;
+}
+
+.elite-shield {
+  background: linear-gradient(135deg, #9c27b0 0%, #673ab7 100%);
+  color: #fff;
+}
+
+.premium-shield {
+  background: linear-gradient(135deg, #ff9800 0%, #dd6b20 100%);
+  color: #fff;
+}

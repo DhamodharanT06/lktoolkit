@@ -1,0 +1,486 @@
+.classroom-form-data {
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.classroom-form-data:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Headings */
+.classroom-form-data .classroom-heading {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #328E6E;
+}
+
+/* .classroom-fieldset and Legends */
+.classroom-fieldset {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  background-color: #f8fafc;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.classroom-fieldset:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+  transform: translateY(-4px);
+}
+
+.classroom-legend {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #3182ce;
+  padding: 0 1rem;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Labels & Inputs */
+label {
+  display: block;
+  margin-bottom: 1.2rem;
+  color: #2d3748;
+  font-size: 1rem;
+  position: relative;
+  padding-left: 2rem;
+  transition: all 0.2s ease;
+}
+
+label:hover {
+  color: #328E6E;
+}
+
+.classroom-form-data input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.input-value[type="text"],
+.input-value[type="number"],
+.input-value[type="date"],
+select {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.classroom-form-data input:focus,
+.classroom-form-data select:focus {
+  border-color: #4299e1;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+/* Red Legend (Warning Section) */
+.classroom-legend.classroom-danger {
+  color: #e53e3e;
+}
+
+/* Submit Button */
+.classroom-submit-button {
+  background-color: #3182ce;
+  color: white;
+  padding: 0.9rem 1.8rem;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.classroom-submit-button:hover {
+  background-color: #2c5282;
+}
+
+.cancel-button {
+  background-color: #f7fafc;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+  padding: 0.9rem 1.8rem;
+  font-size: 1.05rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: #edf2f7;
+  color: #2d3748;
+}
+
+/* Analysis Preview */
+.analysis-preview-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.analysis-preview-container h2 {
+  color: #328E6E;
+  margin-bottom: 15px;
+}
+
+.analysis-content {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-family: monospace;
+  margin-bottom: 20px;
+}
+
+.preview-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.edit-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.send-button {
+  background-color: #328E6E;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #287058;
+}
+
+.send-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Admin Dashboard Layout */
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #f8fafc;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Submissions Header */
+.submissions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.submissions-header h2,
+.submissions-header h3 {
+  font-size: 1.8rem;
+  color: #2d3748;
+  margin: 0 0 2.2rem 0; /* Good spacing without being excessive */
+  font-weight: 700;
+}
+
+/* Dashboard controls and refresh styling */
+.dashboard-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Consistent spacing */
+  margin-bottom: 1.5rem;
+}
+
+.refresh-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.last-refresh {
+  color: #666;
+  padding: 0.3rem 0;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auto-refresh-toggle {
+  background-color: #e2e8f0;
+  border: none;
+  padding: 8px 16px; /* Increased padding */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.auto-refresh-toggle.active {
+  background-color: #4299e1;
+  color: white;
+}
+
+.refresh-button {
+  background-color: #4a5568;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.refresh-button:hover {
+  background-color: #2d3748;
+}
+
+.refresh-button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.view-processed-button {
+  background-color: #328E6E;
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.view-processed-button:hover {
+  background-color: #287058;
+  text-decoration: none;
+}
+
+/* Submissions Grid Layout */
+.submission-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+/* For screens where we want to ensure cards are centered */
+@media (min-width: 1200px) {
+  .submission-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+    justify-content: center;
+  }
+}
+
+.submission-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  margin: 0 auto; /* Center each card */
+}
+
+.submission-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.submission-header {
+  background-color: #f0f7f4;
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.submission-date {
+  font-size: 14px;
+  color: #666;
+}
+
+.submission-body {
+  padding: 15px;
+}
+
+.submission-email,
+.submission-url,
+.submission-message {
+  margin: 8px 0;
+  word-break: break-word;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  padding: 8px 0;
+}
+
+.submission-message:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+}
+
+.expand-indicator {
+  color: #328E6E;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.submission-footer {
+  padding: 12px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #e0e0e0;
+}
+
+.analyze-button {
+  background-color: #328E6E;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* Analysis Container */
+.analysis-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 1200px; /* Increased from 900px */
+  width: 92%; /* Add width to take up more screen space */
+  min-height: 80vh; /* Ensure minimum height */
+  display: flex;
+  flex-direction: column;
+}
+
+.analysis-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #edf2f7;
+  padding-bottom: 1.5rem;
+}
+
+.analysis-header h2 {
+  font-size: 1.8rem;
+  color: #2d3748;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+/* Adjustments for the form inside analysis-container */
+.analysis-container .classroom-form-data {
+  flex: 1;
+  margin: 0; /* Remove margin */
+  width: 100%; /* Take full width */
+  max-width: 100%; /* Override any max-width */
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+/* Make fieldsets take up appropriate space */
+.classroom-fieldset {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+/* Ensure that form buttons are properly aligned */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .classroom-form-data,
+  .analysis-container,
+  .preview-container {
+    padding: 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-button,
+  .classroom-submit-button {
+    width: 100%;
+  }
+  
+  .submission-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .submissions-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .button-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .analysis-container {
+    padding: 1.5rem;
+    margin: 0.5rem auto;
+    width: 95%;
+  }
+  
+  .analysis-container .classroom-form-data {
+    padding: 1rem;
+  }
+  
+  .classroom-fieldset {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,232 @@
+.subscription-manager-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.subscription-manager-container h2 {
+  color: #2c5282;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.info-text {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.subscription-form {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f7fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-group small {
+  display: block;
+  color: #718096;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.submit-button {
+  background-color: #2c5282;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #1a365d;
+}
+
+.submit-button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.success-message,
+.error-message {
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.success-message {
+  background-color: #c6f6d5;
+  color: #2f855a;
+}
+
+.error-message {
+  background-color: #fed7d7;
+  color: #c53030;
+}
+
+.subscribers-list {
+  margin-top: 2rem;
+}
+
+.subscribers-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.subscribers-table th,
+.subscribers-table td {
+  padding: 0.8rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.subscribers-table th {
+  background-color: #f7fafc;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.plan-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.plan-badge.free {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.plan-badge.basic {
+  background-color: #bee3f8;
+  color: #2b6cb0;
+}
+
+.plan-badge.premium {
+  background-color: #c6f6d5;
+  color: #2f855a;
+}
+
+.edit-button {
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #3182ce;
+}
+
+/* Delete modal styling */
+.delete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.delete-modal-content {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.delete-modal-content h3 {
+  margin-top: 0;
+  color: #e53935;
+}
+
+.delete-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.delete-modal-buttons .cancel-button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.delete-modal-buttons .delete-button {
+  background-color: #e53935;
+  color: white;
+  border: none;
+}
+
+/* Add styles for the delete button in the table */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.delete-button {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #c62828;
+}
+
+@media (max-width: 768px) {
+  .subscription-manager-container {
+    padding: 1.5rem;
+  }
+  
+  .subscribers-table {
+    display: block;
+    overflow-x: auto;
+  }
+}

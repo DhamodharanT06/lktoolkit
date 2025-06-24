@@ -1,0 +1,128 @@
+.navbar-container {
+    padding: 1.25rem 0.75rem; /* Reduce horizontal padding */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #328E6E;
+    color: white;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 70px;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between; /* This pushes content to the edges */
+    align-items: center;
+    width: 100%; /* Make content stretch full width */
+    margin: 0; /* Remove auto margins that center content */
+    padding: 0; /* Remove padding that creates space */
+}
+
+.navbar-title {
+    padding-left: 0.25rem; /* Tiny padding from left edge */
+    margin: 0; /* Remove any margins */
+}
+
+.navbar-title h2 {
+    cursor: pointer;
+    margin: 0;
+    transition: transform 0.2s;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-title h2:hover {
+    transform: scale(1.03);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+button {
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Remove extra space from logout button */
+button {
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 0; /* Remove any right margin */
+}
+
+/* Add style for active link */
+.navbar-account.active a {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+}
+
+.navbar-profiles-controls {
+    display: flex;
+    column-gap: 20px; /* Space between nav items */
+    align-items: center;
+    padding-right: 0.25rem; /* Tiny padding from right edge */
+    margin: 0; /* Remove any margins */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 1rem 0.5rem; /* Even less padding on mobile */
+    }
+    
+    .navbar-profiles-controls {
+        column-gap: 10px; /* Reduce spacing between items on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-content {
+        width: calc(100% - 0.5rem);
+    }
+    
+    .navbar-title h2 {
+        font-size: 1.25rem;
+    }
+    
+    a, button {
+        padding: 4px 6px;
+        font-size: 0.85rem;
+    }
+    
+    .navbar-profiles-controls {
+        column-gap: 0.5rem;
+    }
+}
+
+/* Add for mobile menu functionality if needed */
+.navbar-profiles-controls.mobile-open {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    background-color: #328E6E;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
